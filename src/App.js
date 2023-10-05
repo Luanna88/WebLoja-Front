@@ -27,6 +27,12 @@ function App() {
     setProdutos(await getProdutos());
   };
 
+  const [carrinho, setCarrinho] = useState([]); 
+  function onComprar() {
+    // Lógica da função
+    console.log('Função onComprar foi chamada.');
+  }
+
   // função chamada quando o componente for carregado
   useEffect(() => {
     getProdutos().then(prods => setProdutos(prods));

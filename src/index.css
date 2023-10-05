@@ -21,7 +21,21 @@ body {
   border: 3px solid white;
   border-radius: 40px;
   border-style:double;
- 
+}
+
+
+.listaDeProdutos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+  margin: 0 auto; 
+  color:wheat;
+}
+
+.produto img {
+  width: 150px;
+
 }
 
 .produto {
@@ -34,29 +48,6 @@ body {
   border-radius: 10px;
   justify-content: space-between;
   width: 180px;
-}
+  color:wheat;
 
-.produto .nome {
-  font-size: 1em;
-}
-
-.produto .valor {
-  font-weight: bolder;
-  font-size: 1.5em;
-}
-
-.produto img {
-  width: 150px;
-}
-
-.produto * {
-  margin: 0;
-}
-
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }

@@ -1,21 +1,26 @@
-export default function ListaDeProdutos({produtos, titulo, onComprar}) {
-    const renderProduto = (p) => {
-      return (
-        <div className="produto">
-          <img src={p.foto}/>
-          <h3>{p.nome}</h3>
-          <h5>R$ {p.valor.toFixed(2)}</h5>
-          <button onClick={() => onComprar(p)}>Comprar</button>
-        </div>
-      );
-    };
-  
+import React from 'react'
+import { Link } from 'react-router-dom';
+
+export default function ListaDeProdutos({produtos}) {
+  const renderProduto = (produto) => {
     return (
-      <>
-        <h2>{titulo}</h2>
-        <div className="listaDeProdutos">
-          {produtos.map(renderProduto)}
-        </div>
-      </>
-    )
-  }
+      <div className='produto' key={'produto_' + produto.id}>
+        <Link to={'/detalhe/' + produto.id}>
+          <img src={produto.foto} alt={'Foto do produto: ' + produto.nome}/>
+        </Link>
+        <p className='nome'>{produto.nome}</p>
+        <p className='valor'>R$ {produto.valor ? produto.valor.toFixed(2) : '-'}</p>
+        <button className='btn btn-primary'>Comprar</button>
+      </div>
+    );
+  };
+
+  return (
+    <div className='listaDeProdutos'>
+      { produtos.map(renderProduto) }
+    </div>
+  )
+}
+
+
+
